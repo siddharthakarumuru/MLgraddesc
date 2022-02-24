@@ -1,0 +1,74 @@
+wordcount per key basis
+Inverted Index:
+query term : "best pizza near me"
+
+1. doc 1
+2. doc 2
+..
+
+"secret sause"
+-> ranking of results
+
+how to match query to document
+sim(query , document) -> tf-idf ( matching of term to a document)
+
+how to represent a document
+Bag of words
+
+
+
+Similarity metric
+
+
+Document id frequency
+
+
+"mystery"
+
+tf-idf("mystery",d1)
+tf-idf("mystery",d2)
+tf-idf("mystery",d3)
+
+return in decreasing -> highest tf-idf at top
+
+2. multiple query terms
+
+mystery horror shot in europe
+
+
+
+q=mystery horror a1 a2 europe france
+
+cos(q , d1) = dot product of (q,d1) vectors / mag(q) * mag(d1)
+
+=[1*1 + 1*1 + 0*1 + ...] / sqrt(2)sqrt(4)
+
+
+RDD?
+-shared and distributed memory
+-judicious use
+2ways of creating rdd 
+1. reading from external file
+sc.textFile("")
+2. from a local structure ( eq array in local memory)
+sc.paralellize()
+
+2 operations:
+
+1. transformation
+rdd1 -> rdd2 -> rdd3 ..
+eg map , filter , reduceByKey
+
+2. action -> immediate
+rdd -> result
+eg collect , reduce , ..
+
+rdd 
+INTERNALLY CONSISTS OF PARTITIONS ( ` BLOCKS IN hADOOP FILE)
+
+
+File uploaded to /FileStore/tables/movies.csv
+File uploaded to /FileStore/tables/tags.csv
+File uploaded to /FileStore/tables/ratings.csv
+
+
